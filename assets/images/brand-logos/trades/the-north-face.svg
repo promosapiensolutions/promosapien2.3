@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" role="img" aria-label="The North Face">
+  <g fill="#111317">
+    <text x="6" y="24" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">THE</text>
+    <text x="6" y="43" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">NORTH FACE</text>
+    <path d="M188 46V18c21 1 40 13 45 28h-9c-5-10-17-18-28-19v19h-8Z"/>
+    <path d="M202 46V31c11 2 19 7 23 15h-9c-3-4-7-6-14-8v8h-8Z"/>
+    <path d="M214 46v-5c4 1 7 3 9 5h-9Z"/>
+  </g>
+</svg>

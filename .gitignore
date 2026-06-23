@@ -1,0 +1,12 @@
+.DS_Store
+-g
+.vercel/
+node_modules/
+reference/
+outputs/
+
+# Keep large working/source images local. The site serves optimized WebP assets.
+/assets/images/**/*.jpg
+/assets/images/**/*.jpeg
+/assets/images/**/*.png
+!/assets/images/promosapien-logo-transparent.png

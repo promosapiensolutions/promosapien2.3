@@ -1,0 +1,30 @@
+name: Refresh trending products
+
+on:
+  schedule:
+    - cron: '0 13 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+      - run: npx playwright install --with-deps chromium
+      - run: npm run refresh:trending
+      - name: Commit refreshed products
+        run: |
+          git config user.name "Promosapien Product Bot"
+          git config user.email "product-bot@users.noreply.github.com"
+          git add assets/data/trending-products.csv assets/js/trending-products-data.js assets/images/trending-products
+          git diff --cached --quiet && exit 0
+          git commit -m "Refresh weekly trending products"
+          git push

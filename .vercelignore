@@ -1,0 +1,8 @@
+reference/
+assets/images/trending-mockups/
+
+# Exclude source imagery from deployment. Pages serve optimized WebP assets.
+/assets/images/**/*.jpg
+/assets/images/**/*.jpeg
+/assets/images/**/*.png
+!/assets/images/promosapien-logo-transparent.png

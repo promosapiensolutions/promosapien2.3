@@ -1,0 +1,15 @@
+{
+  "name": "promosapien-merch-solutions",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static website for Promosapien Merch Solutions.",
+  "scripts": {
+    "dev": "python3 -m http.server 4173 --bind 127.0.0.1",
+    "build": "echo \"Static site ready\"",
+    "start": "python3 -m http.server 4173 --bind 127.0.0.1",
+    "refresh:trending": "node scripts/refresh-trending-products.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.53.0"
+  }
+}

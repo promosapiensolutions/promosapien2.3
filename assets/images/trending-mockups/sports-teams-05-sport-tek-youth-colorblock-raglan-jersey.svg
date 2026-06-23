@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 720" width="960" height="720" role="img" aria-label="Sport-Tek Youth Colorblock Raglan Jersey">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fff9ef"/><stop offset="1" stop-color="#d6dfc2"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity=".20"/></filter>
+  </defs>
+  <rect width="960" height="720" fill="url(#bg)"/>
+  <circle cx="780" cy="120" r="190" fill="#4e638b" opacity=".09"/>
+  <circle cx="160" cy="620" r="170" fill="#ffffff" opacity=".22"/>
+  <path d="M0 575 C210 520 310 660 520 600 C710 548 780 610 960 555 L960 720 L0 720Z" fill="#fff" opacity=".28"/>
+<rect x="70" y="62" width="820" height="590" rx="34" fill="#fff" opacity=".55"/><g filter="url(#shadow)"><rect x="245" y="280" width="470" height="270" rx="20" fill="#342f2a"/><path d="M285 280 C315 214 645 214 675 280" fill="none" stroke="#4e638b" stroke-width="34"/><rect x="290" y="310" width="380" height="170" rx="18" fill="#fff9ef" opacity=".93"/><circle cx="700" cy="230" r="54" fill="#4e638b"/></g><path d="M446 388 L470 354 L485 376 L498 358 L522 388 Z" fill="none" stroke="#342f2a" stroke-width="7" stroke-linejoin="round"/><path d="M470 354 L484 388" stroke="#342f2a" stroke-width="5" opacity=".8"/><text x="480" y="412" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="800" fill="#342f2a" text-anchor="middle" letter-spacing="1.5">ATLAS WORKS</text><text x="74" y="112" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="900" fill="#342f2a" letter-spacing="3">SPORTS TEAMS</text></svg>

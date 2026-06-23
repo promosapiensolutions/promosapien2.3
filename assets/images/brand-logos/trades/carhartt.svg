@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" role="img" aria-label="Carhartt">
+  <g fill="#111317">
+    <path d="M6 33C6 18 18 8 34 8c14 0 24 6 30 16l-14 9c-4-7-9-10-16-10-7 0-12 4-12 10s5 10 12 10c7 0 12-3 16-10l14 9C58 52 48 58 34 58 18 58 6 48 6 33Z"/>
+    <path d="M41 9h26v25H56c-1-10-6-18-15-25Z"/>
+    <text x="76" y="43" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="-1">carhartt</text>
+  </g>
+</svg>
