@@ -578,6 +578,10 @@ h2 {
   grid-template-columns: repeat(4, 1fr);
 }
 
+.home-sector-grid .solution-card img {
+  filter: none;
+}
+
 .store-models {
   padding: 52px 70px 62px;
   background: #fff;
@@ -606,7 +610,7 @@ h2 {
 }
 
 .store-model-employee {
-  grid-template-columns: minmax(320px, 1.15fr) minmax(320px, 1fr);
+  grid-template-rows: auto 1fr;
 }
 
 .store-model-card > img {
@@ -614,6 +618,14 @@ h2 {
   height: 100%;
   min-height: 360px;
   object-fit: cover;
+}
+
+.store-model-employee > img {
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 169 / 90;
+  object-fit: contain;
+  background: #e7eeee;
 }
 
 .store-model-card > div {
@@ -5246,13 +5258,15 @@ h2 {
 }
 
 @media (max-width: 1120px) {
-  .store-model-employee {
-    grid-template-columns: 1fr;
-  }
-
   .store-model-card > img {
     min-height: 260px;
     max-height: 360px;
+  }
+
+  .store-model-employee > img {
+    height: auto;
+    min-height: 0;
+    max-height: none;
   }
 
   .executive-store-callout {
