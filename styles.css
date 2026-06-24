@@ -752,6 +752,11 @@ h2 {
   filter: sepia(0.22) saturate(0.88) hue-rotate(45deg) brightness(1.03);
 }
 
+/* Homepage sector photography should retain its original, industry-accurate color. */
+.home-sector-grid .solution-card:nth-child(n) img {
+  filter: none;
+}
+
 .brand-strip {
   padding: 22px 80px 25px;
   border-top: 1px solid #dddddd;
