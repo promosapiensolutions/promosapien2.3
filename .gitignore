@@ -5,6 +5,7 @@ node_modules/
 reference/
 outputs/
 public/
+.public-build-*/
 
 # Keep large working/source images local. The site serves optimized WebP assets.
 /assets/images/**/*.jpg

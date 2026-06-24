@@ -1,9 +1,10 @@
-import { copyFile, mkdir, readdir, rm } from 'node:fs/promises';
+import { copyFile, mkdir, readdir, rename, rm } from 'node:fs/promises';
 import { extname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = new URL('../', import.meta.url);
 const output = new URL('../public/', import.meta.url);
+const staging = new URL(`../.public-build-${Date.now()}-${Math.random().toString(16).slice(2)}/`, import.meta.url);
 const rootFiles = ['styles.css', 'robots.txt', 'sitemap.xml'];
 const allowedImageExtensions = new Set(['.webp', '.svg']);
 
@@ -19,8 +20,7 @@ async function copyFileWithRetry(source, destination) {
   }
 }
 
-await rm(output, { recursive: true, force: true });
-await mkdir(output, { recursive: true });
+await mkdir(staging, { recursive: true });
 
 const entries = await readdir(root, { withFileTypes: true });
 const htmlFiles = entries
@@ -28,7 +28,7 @@ const htmlFiles = entries
   .map((entry) => entry.name);
 
 await Promise.all([...htmlFiles, ...rootFiles].map((file) =>
-  copyFileWithRetry(new URL(file, root), new URL(file, output))
+  copyFileWithRetry(new URL(file, root), new URL(file, staging))
 ));
 
 async function copyTree(source, destination, include) {
@@ -47,7 +47,7 @@ async function copyTree(source, destination, include) {
 
 await copyTree(
   fileURLToPath(new URL('../assets/', import.meta.url)),
-  fileURLToPath(new URL('../public/assets/', import.meta.url)),
+  fileURLToPath(new URL('assets/', staging)),
   (file) => {
     const extension = extname(file).toLowerCase();
     return extension === '.js' ||
@@ -56,5 +56,8 @@ await copyTree(
       file.endsWith('promosapien-logo-transparent.png');
   }
 );
+
+await rm(output, { recursive: true, force: true });
+await rename(staging, output);
 
 console.log(`Static site ready: ${htmlFiles.length} pages copied to public/`);
