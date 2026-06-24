@@ -590,11 +590,27 @@ h2 {
 }
 
 .home-sector-grid {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
 }
 
 .home-sector-grid .solution-card img {
   filter: none;
+}
+
+.home-sector-grid .solution-card-primary {
+  border-color: var(--teal);
+  border-top-width: 3px;
+}
+
+.card-kicker {
+  min-height: 0 !important;
+  margin: 0 0 8px !important;
+  color: var(--teal) !important;
+  font-size: 10px !important;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
 }
 
 .store-models {

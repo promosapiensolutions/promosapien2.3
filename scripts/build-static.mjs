@@ -1,4 +1,4 @@
-import { cp, mkdir, readdir, rm } from 'node:fs/promises';
+import { copyFile, mkdir, readdir, rm } from 'node:fs/promises';
 import { extname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -6,6 +6,18 @@ const root = new URL('../', import.meta.url);
 const output = new URL('../public/', import.meta.url);
 const rootFiles = ['styles.css', 'robots.txt', 'sitemap.xml'];
 const allowedImageExtensions = new Set(['.webp', '.svg']);
+
+async function copyFileWithRetry(source, destination) {
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    try {
+      await copyFile(source, destination);
+      return;
+    } catch (error) {
+      if (error.code !== 'ENOENT' || attempt === 2) throw error;
+      await new Promise((resolve) => setTimeout(resolve, 150 * (attempt + 1)));
+    }
+  }
+}
 
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
@@ -16,7 +28,7 @@ const htmlFiles = entries
   .map((entry) => entry.name);
 
 await Promise.all([...htmlFiles, ...rootFiles].map((file) =>
-  cp(new URL(file, root), new URL(file, output))
+  copyFileWithRetry(new URL(file, root), new URL(file, output))
 ));
 
 async function copyTree(source, destination, include) {
@@ -28,7 +40,7 @@ async function copyTree(source, destination, include) {
     if (child.isDirectory()) {
       await copyTree(sourcePath, destinationPath, include);
     } else if (include(sourcePath)) {
-      await cp(sourcePath, destinationPath);
+      await copyFileWithRetry(sourcePath, destinationPath);
     }
   }
 }
