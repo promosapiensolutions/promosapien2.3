@@ -5,7 +5,7 @@
   "description": "Static website for Promosapien Merch Solutions.",
   "scripts": {
     "dev": "python3 -m http.server 4173 --bind 127.0.0.1",
-    "build": "echo \"Static site ready\"",
+    "build": "node scripts/build-static.mjs",
     "start": "python3 -m http.server 4173 --bind 127.0.0.1",
     "refresh:trending": "node scripts/refresh-trending-products.mjs"
   },

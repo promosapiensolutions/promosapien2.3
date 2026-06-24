@@ -58,29 +58,11 @@ const plans = [
     ]
   },
   {
-    pageKey: 'sports-teams',
-    searches: [
-      ['team uniforms', 'Team Apparel'],
-      ['sports bags', 'Bags'],
-      ['fan apparel', 'Fan Gear'],
-      ['team caps', 'Headwear'],
-      ['team backpacks', 'Bags']
-    ]
-  },
-  {
     pageKey: 'events-trade-shows',
     searches: [
       ['conference bags', 'Conference Gear'],
       ['event staff apparel', 'Event Apparel'],
       ['wireless chargers', 'Tech Giveaways']
-    ]
-  },
-  {
-    pageKey: 'events-races',
-    searches: [
-      ['running apparel', 'Race Apparel'],
-      ['running belt', 'Race Gear'],
-      ['race day drinkware', 'Drinkware']
     ]
   },
   {
