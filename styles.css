@@ -1058,6 +1058,90 @@ h2 {
   padding-top: 34px;
 }
 
+.executive-store-callout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.9fr);
+  align-items: stretch;
+  background: #eef6f7;
+}
+
+.executive-store-callout > div {
+  max-width: 720px;
+  padding: 58px 70px;
+}
+
+.executive-store-callout h2 {
+  margin-bottom: 20px;
+  font-size: clamp(34px, 4vw, 54px);
+}
+
+.executive-store-callout p:not(.eyebrow) {
+  margin: 0 0 28px;
+  color: #263638;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.executive-store-callout > img {
+  width: 100%;
+  height: 100%;
+  min-height: 390px;
+  object-fit: cover;
+}
+
+.executive-store-callout-dark {
+  background: #062f33;
+  color: #fff;
+}
+
+.executive-store-callout-dark h2,
+.executive-store-callout-dark p:not(.eyebrow) {
+  color: #fff;
+}
+
+.relationship-moments {
+  padding: 54px 70px 62px;
+  background: #fff;
+  text-align: center;
+}
+
+.relationship-moments > p:not(.eyebrow) {
+  max-width: 760px;
+  margin: 14px auto 30px;
+  color: #344648;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.relationship-moment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  max-width: 1180px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.relationship-moment-grid article {
+  padding: 28px;
+  border-top: 3px solid var(--teal);
+  background: #f3f7f7;
+}
+
+.relationship-moment-grid h3 {
+  margin: 0 0 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.relationship-moment-grid p {
+  margin: 0;
+  color: #35484a;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
 .gift-handle {
   position: relative;
   display: grid;
@@ -5070,6 +5154,18 @@ h2 {
 }
 
 @media (max-width: 1120px) {
+  .executive-store-callout {
+    grid-template-columns: 1fr;
+  }
+
+  .executive-store-callout > img {
+    max-height: 460px;
+  }
+
+  .relationship-moment-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .golf-intro {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -5511,6 +5607,19 @@ h2 {
 }
 
 @media (max-width: 760px) {
+  .executive-store-callout > div,
+  .relationship-moments {
+    padding: 42px 22px;
+  }
+
+  .executive-store-callout > img {
+    min-height: 260px;
+  }
+
+  .relationship-moment-grid {
+    grid-template-columns: 1fr;
+  }
+
   .golf-intro,
   .golf-results,
   .golf-products,
