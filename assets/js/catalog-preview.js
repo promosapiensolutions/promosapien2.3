@@ -1,7 +1,6 @@
 (function () {
-  const brandedHost = 'https://products.promosapiensolutions.com';
   const previewHost = 'https://wearepromosapien.espwebsites.com';
-  const catalogHost = window.location.protocol === 'file:' ? previewHost : brandedHost;
+  const catalogHost = window.location.protocol === 'file:' ? previewHost : '';
   const categories = [
     ['Apparel', 'Tees, polos, fleece, jackets', 'apparel'],
     ['Headwear', 'Caps, beanies, visors', 'headwear'],
@@ -74,11 +73,11 @@
   });
 
   if (window.location.protocol === 'file:') {
-    document.querySelectorAll(`a[href^="${brandedHost}"]`).forEach((link) => {
-      link.href = link.href.replace(brandedHost, previewHost);
+    document.querySelectorAll('a[href^="/products"]').forEach((link) => {
+      link.href = `${previewHost}${link.getAttribute('href')}`;
     });
-    document.querySelectorAll(`form[action^="${brandedHost}"]`).forEach((form) => {
-      form.action = form.action.replace(brandedHost, previewHost);
+    document.querySelectorAll('form[action^="/products"]').forEach((form) => {
+      form.action = `${previewHost}${form.getAttribute('action')}`;
     });
   }
 }());

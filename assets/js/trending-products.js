@@ -1,6 +1,7 @@
 (function () {
   const DEFAULT_CSV = 'assets/data/trending-products.csv';
   const CSV_URL = window.PROMOSAPIEN_TRENDING_PRODUCTS_CSV || DEFAULT_CSV;
+  const previewHost = 'https://wearepromosapien.espwebsites.com';
   let productDataPromise;
 
   function parseCsv(text) {
@@ -80,8 +81,8 @@
     article.className = 'trending-product-card';
 
     const link = document.createElement('a');
-    link.href = window.location.protocol === 'file:'
-      ? product.ProductUrl.replace('https://products.promosapiensolutions.com', 'https://wearepromosapien.espwebsites.com')
+    link.href = window.location.protocol === 'file:' && product.ProductUrl.startsWith('/products')
+      ? `${previewHost}${product.ProductUrl}`
       : product.ProductUrl;
     link.target = '_blank';
     link.rel = 'noopener';
