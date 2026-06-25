@@ -35,11 +35,11 @@
       </div>
       <div class="header-category-heading">
         <span>Browse Main Categories</span>
-        <a href="${catalogHost}/products?sort=PVRN">All Products</a>
+        <a href="${catalogHost}/products?sort=PVRN" target="_blank" rel="noopener">All Products</a>
       </div>
       <div class="header-category-grid" aria-label="Browse product categories">
         ${categories.map(([name, description, query]) => `
-          <a href="${catalogUrl(query)}">
+          <a href="${catalogUrl(query)}" target="_blank" rel="noopener">
             <strong>${name}</strong>
             <span>${description}</span>
           </a>
