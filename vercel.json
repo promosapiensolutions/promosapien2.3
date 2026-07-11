@@ -7,12 +7,12 @@
   "redirects": [
     {
       "source": "/products",
-      "destination": "https://wearepromosapien.espwebsites.com/products",
+      "destination": "https://products.promosapiensolutions.com/products",
       "permanent": false
     },
     {
       "source": "/products/:path*",
-      "destination": "https://wearepromosapien.espwebsites.com/products/:path*",
+      "destination": "https://products.promosapiensolutions.com/products/:path*",
       "permanent": false
     }
   ],
