@@ -1,7 +1,7 @@
 (function () {
   const DEFAULT_CSV = 'assets/data/trending-products.csv';
   const CSV_URL = window.PROMOSAPIEN_TRENDING_PRODUCTS_CSV || DEFAULT_CSV;
-  const previewHost = 'https://products.promosapiensolutions.com';
+  const previewHost = 'https://wearepromosapien.espwebsites.com';
   let productDataPromise;
 
   function parseCsv(text) {

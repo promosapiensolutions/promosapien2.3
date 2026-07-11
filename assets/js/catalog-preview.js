@@ -1,5 +1,5 @@
 (function () {
-  const previewHost = 'https://products.promosapiensolutions.com';
+  const previewHost = 'https://wearepromosapien.espwebsites.com';
   const catalogHost = window.location.protocol === 'file:' ? previewHost : '';
   const categories = [
     ['Apparel', 'Tees, polos, fleece, jackets', 'apparel'],
