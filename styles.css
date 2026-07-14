@@ -296,7 +296,8 @@ a {
 }
 
 .nav-dropdown:hover .nav-dropdown-menu,
-.nav-dropdown:focus-within .nav-dropdown-menu {
+.nav-dropdown:focus-within .nav-dropdown-menu,
+.nav-dropdown.is-open .nav-dropdown-menu {
   opacity: 1;
   pointer-events: auto;
   transform: translate(-50%, 0);
@@ -5981,7 +5982,9 @@ h2 {
   }
 
   .site-header {
-    position: static;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     display: flex;
     flex-wrap: wrap;
     padding: 18px 20px;
@@ -6028,6 +6031,7 @@ h2 {
     left: 0;
     right: auto;
     top: calc(100% + 8px);
+    z-index: 1200;
     min-width: 0;
     width: 230px;
     margin-top: 0;
@@ -6035,7 +6039,8 @@ h2 {
   }
 
   .nav-dropdown:hover .nav-dropdown-menu,
-  .nav-dropdown:focus-within .nav-dropdown-menu {
+  .nav-dropdown:focus-within .nav-dropdown-menu,
+  .nav-dropdown.is-open .nav-dropdown-menu {
     transform: translate(0, 0);
   }
 

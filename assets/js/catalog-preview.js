@@ -72,6 +72,30 @@
     });
   });
 
+  const mobileNavQuery = window.matchMedia('(max-width: 760px)');
+  document.querySelectorAll('.nav-dropdown').forEach((dropdown) => {
+    const trigger = dropdown.querySelector('.nav-dropdown-trigger');
+    if (!trigger) return;
+
+    trigger.addEventListener('click', (event) => {
+      if (!mobileNavQuery.matches) return;
+      const wasOpen = dropdown.classList.contains('is-open');
+      document.querySelectorAll('.nav-dropdown.is-open').forEach((openDropdown) => {
+        if (openDropdown !== dropdown) openDropdown.classList.remove('is-open');
+      });
+      if (!wasOpen) {
+        event.preventDefault();
+        dropdown.classList.add('is-open');
+      }
+    });
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!mobileNavQuery.matches) return;
+    if (event.target.closest('.nav-dropdown')) return;
+    document.querySelectorAll('.nav-dropdown.is-open').forEach((dropdown) => dropdown.classList.remove('is-open'));
+  });
+
   if (window.location.protocol === 'file:') {
     document.querySelectorAll('a[href^="/products"]').forEach((link) => {
       link.href = `${previewHost}${link.getAttribute('href')}`;
