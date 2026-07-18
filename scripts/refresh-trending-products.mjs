@@ -4,8 +4,8 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
-const storefront = 'https://wearepromosapien.espwebsites.com';
-const catalog = 'https://wearepromosapien.espwebsites.com';
+const storefront = 'https://products.promosapiensolutions.com';
+const catalog = 'https://products.promosapiensolutions.com';
 const imageDirectory = join(root, 'assets/images/trending-products');
 const csvPath = join(root, 'assets/data/trending-products.csv');
 const fallbackPath = join(root, 'assets/js/trending-products-data.js');
